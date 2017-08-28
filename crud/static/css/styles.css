@@ -1,0 +1,60 @@
+@font-face {
+    font-family: RobotoRegular;
+    font-weight: 400;
+    font-style: normal;
+    src: url(../fonts/RobotoRegular/RobotoRegular.eot);
+    src: url(../fonts/RobotoRegular/RobotoRegular.eot?#iefix) format("embedded-opentype"),
+         url(../fonts/RobotoRegular/RobotoRegular.woff) format("woff"),
+         url(../fonts/RobotoRegular/RobotoRegular.ttf) format("truetype")
+}
+
+@font-face {
+    font-family: RobotoBold;
+    font-weight: 700;
+    font-style: bold;
+    src: url(../fonts/RobotoBold/RobotoBold.eot);
+    src: url(../fonts/RobotoBold/RobotoBold.eot?#iefix) format("embedded-opentype"),
+         url(../fonts/RobotoBold/RobotoBold.woff) format("woff"),
+         url(../fonts/RobotoBold/RobotoBold.ttf) format("truetype")
+}
+
+body {
+    font-family: RobotoRegular, sans-serif;
+}
+
+.navbar-brand img {
+    width: auto;
+    height: 100%;
+    max-height: 50px;
+}
+
+
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+.page-wrapper {
+  min-height: 100%;
+  margin-bottom: -80px;
+}
+.page-wrapper:after {
+  content: "";
+  display: block;
+}
+
+footer, .page-wrap:after {
+  height: 80px;
+}
+
+.navbar-nav li a span:nth-of-type(2) {
+    margin: 0 7px;
+}
+
+.navbar-nav li a button {
+    padding: 0px 5px;
+    margin-left: 10px;
+}
