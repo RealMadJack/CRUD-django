@@ -23,7 +23,8 @@ $("#modal-book").on("submit", ".js-book-create-form", function () {
         dataType: 'json',
         success: function (data) {
             if (data.form_is_valid) {
-                alert("Book created!");
+                $("#book-table tbody").html(data.html_book_list);
+                $("#modal-book").modal("hide");
             } else {
                 $("#modal-book .modal-content").html(data.html_form);
             }

@@ -19,6 +19,11 @@ def book_create(request):
         if form.is_valid():
             form.save()
             data['form_is_valid'] = True
+            book_list = Book.objects.all()
+            data['html_book_list'] = render_to_string(
+                'books/includes/partial_book_list.html',
+                { 'book_list': book_list },
+            )
         else:
             data['form_is_valid'] = False
     else:
