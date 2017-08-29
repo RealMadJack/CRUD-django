@@ -1,8 +1,10 @@
 (function () {
 
-$(".js-create-book").click(function () {
+var loadForm = function () {
+    var btn = $(this);
+
     $.ajax({
-        url: '/books/create/',
+        url: btn.attr("data-url"),
         type: 'get',
         dataType: 'json',
         beforeSend: function () {
@@ -12,9 +14,9 @@ $(".js-create-book").click(function () {
             $("#modal-book .modal-content").html(data.html_form);
         }
     });
-})
+};
 
-$("#modal-book").on("submit", ".js-book-create-form", function () {
+var saveForm = function () {
     var form = $(this);
     $.ajax({
         url: form.attr("action"),
@@ -31,6 +33,14 @@ $("#modal-book").on("submit", ".js-book-create-form", function () {
         }
     });
     return false;
-});
+};
+
+// Create book
+$(".js-create-book").click(loadForm);
+$("#modal-book").on("submit", ".js-book-create-form", saveForm);
+
+// Update book
+$("#book-table").on("click", ".js-update-book", loadForm)
+$("#modal-book").on("submit", ".js-book-update-form", saveForm);
 
 })();
